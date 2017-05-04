@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.leonsbrbara.quizapp.Models.ViewModel"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/activity_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.leonsbrbara.quizapp.QuestionActivity"
+        android:background="@color/colorPrimaryDark">
+
+
+        <android.support.constraint.Guideline
+            android:layout_width="384dp"
+            android:layout_height="0dp"
+            android:id="@+id/guideline2"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2035225"
+            tools:layout_editor_absoluteY="104dp"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/textView"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:fontFamily="sans-serif"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            app:layout_constraintHorizontal_bias="0.0"
+            tools:text="Question"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            android:text='@{viewmodel.question}'/>
+
+        <android.support.constraint.Guideline
+            android:layout_width="384dp"
+            android:layout_height="0dp"
+            android:id="@+id/guideline"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="209dp"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintGuide_percent="0.40900195" />
+
+        <android.support.constraint.Guideline
+            android:layout_width="384dp"
+            android:layout_height="0dp"
+            android:id="@+id/guideline3"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="361dp"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintGuide_percent="0.7064579" />
+
+        <android.support.constraint.Guideline
+            android:layout_width="0dp"
+            android:layout_height="511dp"
+            android:id="@+id/guideline5"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5078125"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="195dp" />
+
+        <android.support.constraint.Guideline
+            android:layout_width="384dp"
+            android:layout_height="0dp"
+            android:id="@+id/guideline6"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="157dp"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintGuide_percent="0.3072407" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/textView2"
+            tools:text="1.Alternativ"
+            android:textSize="14sp"
+            android:text='@{"1. "+viewmodel.alternativ1}'
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintRight_toLeftOf="@+id/textView5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView4" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/textView3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintLeft_toRightOf="@+id/textView2"
+            tools:text="2.Alternativ"
+            android:text='@{"2. "+viewmodel.alternativ2}'/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            app:layout_constraintRight_toLeftOf="@+id/guideline5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            tools:text="3.Alternativ"
+            android:text='@{"3. "+viewmodel.alternativ3}'
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+            tools:text="4.Alternativ"
+            android:text='@{"4. "+ viewmodel.alternativ4}'/>
+
+        <Button
+            android:text="1."
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintRight_toLeftOf="@+id/guideline5"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:textSize="30sp"
+            android:textColor="@android:color/background_dark"
+            android:textStyle="normal|bold"
+            android:onClick="@{viewmodel.button1Pressed}"/>
+
+        <Button
+            android:text="2."
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintRight_toRightOf="parent"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/background_dark"
+            android:onClick="@{viewmodel.button2Pressed}"/>
+
+        <Button
+            android:text="3."
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/button4"
+            app:layout_constraintRight_toLeftOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/background_dark"
+            android:onClick="@{viewmodel.button3Pressed}"/>
+
+        <Button
+            android:text="4."
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/button5"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:textSize="30sp"
+            android:textColor="@android:color/background_dark"
+            android:textStyle="normal|bold"
+            android:onClick="@{viewmodel.button4Pressed}"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
